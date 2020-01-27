@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{post.title}}</title>
-</head>
-<body>
+{% extends './base.html' %}
+
+{% block title %}{{post.title}}{% endblock %}
+{% block content %}
     <h1>{{post.title}}</h1>
     <p>{{post.text}}</p>
     <hr>
     <p>Автор: {{post.author}} ({{first_name}} {{last_name}})</p>
     <p><small style="color: silver">Дата создания: {{post.created_date}}</small></p>
     <p><small style="color: silver">Дата публикации {{post.published_date}}</small></p>
-</body>
+{% endblock %}
 </html>

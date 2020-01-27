@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Sigmar+One&display=swap" rel="stylesheet">
+    <title>{% block title %} Заголовок {% endblock %}</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div style="border-bottom: 1px solid black; margin-bottom: 10px; padding-bottom: 10px;">
+            <div style="background-color: #ff9400; padding: 20px 20px 20px 40px; margin-bottom: 10px;" class="page-header">
+                <h1 float: left; style="font-family: 'Sigmar One', cursive; margin-left: 5px;"><a style="color: white; text-decoration: none;" href="/">MFBlog</a></h1>
+            </div>
+
+            {% block content %}
+
+            {% endblock %}
+        </div>
+
+        <p style="color: #f9a200;">*<span style="font-family: 'Sigmar One', cursive;">MFBlog</span> - мой первый блог</p>
+    </div>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
+</body>
+</html>
