@@ -5,17 +5,21 @@
     <title>Все статьи</title>
 </head>
 <body>
-    <h1>Все статьи нашего блога:</h1>
     <main>
-        {% for post in posts %}
-            <article style="border: 1px solid black; margin:5px; width: 32.3%; display: inline-block; vertical-align: top;">
-                <div style="margin: 10px;">
-                    <h2><a class="to_post" href="{% url 'post_detail' pk=post.pk %}" style="color: black; text-decoration: none">{{post.title}}</a></h2>
-                    <p>{{post.text}}</p>
-                    <small style="color:silver">Опубликовано {{post.published_date}}</small>
-                </div>
-            </article>
-        {% endfor %}
+        {% if posts.count > 0 %}
+            <h1>Все статьи нашего блога:</h1>
+            {% for post in posts %}
+                <article style="border: 1px solid black; margin:5px; width: 32.3%; display: inline-block; vertical-align: top;">
+                    <div style="margin: 10px;">
+                        <h2><a class="to_post" href="{% url 'post_detail' pk=post.pk %}" style="color: black; text-decoration: none">{{post.title}}</a></h2>
+                        <p>{{post.text}}</p>
+                        <small style="color:silver">Опубликовано {{post.published_date}}</small>
+                    </div>
+                </article>
+            {% endfor %}
+        {% else %}
+            <h1>Не найдено ни одной статьи =(</h1>
+        {% endif %}
     </main>
 </body>
 </html>

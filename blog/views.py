@@ -9,4 +9,7 @@ def post_list(request):
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    return render(request, 'blog/post_detail.html', {'post':post, 'first_name':User.objects.get(username=post.author).first_name, 'last_name':User.objects.get(username=post.author).last_name})
+    return render(request, 'blog/post_detail.html', {'post':post,
+                                                     'first_name':User.objects.get(username=post.author).first_name,
+                                                     'last_name':User.objects.get(username=post.author).last_name,
+                                                     })
